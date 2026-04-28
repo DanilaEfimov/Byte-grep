@@ -32,7 +32,7 @@ The executable `byte-grep` will be in the `build` directory.
 
 ## Usage
 
-byte-grep -i <path> -p <pattern> [options]
+byte-grep -i <path> -p "<pattern>" [options]
 
 ### Options
 
@@ -54,9 +54,9 @@ byte-grep -i <path> -p <pattern> [options]
 - `_` – byte separator (optional)
 
 **Examples:**
-- `0b11111111` – exact byte `0xFF`
-- `0b1XXXXXXX` – byte with highest bit set
-- `0b0000XXXX_XXXXXXXX` – first nibble zero, second any
+- `"0b11111111"` – exact byte `0xFF`
+- `"0b1XXXXXXX"` – byte with highest bit set
+- `"0b0000XXXX_XXXXXXXX"` – first nibble zero, second any
 
 #### Hexadecimal Format (`0x` prefix)
 
@@ -72,17 +72,17 @@ byte-grep -i <path> -p <pattern> [options]
 
 Search for byte `0x4A` in a single file:
 ```cmd
-byte-grep -i file.bin -p 0x4A
+byte-grep -i file.bin -p "0x4A"
 ```
 
 Search recursively for pattern with wildcards:
 ```cmd
-byte-grep -i ./directory -p 0b1100XXXX -m all-of
+byte-grep -i ./directory -p "0b1100XXXX" -m all-of
 ```
 
 Count occurrences of a pattern:
 ```cmd
-byte-grep -i firmware.bin -p 0xDEADBEEF -c
+byte-grep -i firmware.bin -p "0xDEADBEEF" -c
 ```
 
 ## Output Format
